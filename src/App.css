@@ -1,0 +1,352 @@
+body {
+  padding-top: 80px;
+  /* Adjust the padding to create space between the fixed header and content */
+  box-sizing: border-box;
+  background-color: rgb(36, 36, 36);
+  color: white;
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1000;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.logo {
+  margin-left: 30px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input {
+  border: 2px solid transparent;
+  width: 100%;
+  /* Use 100% width by default */
+  /*max-width: 75em;  Set a maximum width for larger screens */
+  margin-right: 30px;
+  height: 2.5em;
+  padding-left: 0.8em;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+input:hover,
+input:focus {
+  border: 2px solid #29cc1b;
+  box-shadow: 0px 0px 0px 7px rgba(93, 236, 74, 0.2);
+  background-color: white;
+}
+
+/* Add this style to your existing CSS for the YTS logo */
+.logo:hover {
+  cursor: pointer;
+}
+
+#searchResults section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+  flex-direction: row;
+
+}
+
+#searchResults-list {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+#searchResults img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+#searchResults img:hover {
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  transform: scale(1.1);
+  /* Increasing the scale on hover for a subtle zoom effect */
+}
+
+/* Styles for mobile screens */
+@media (max-width: 667px) {
+  #searchResults section {
+    gap: 30px;
+  }
+  
+}
+
+/* Add this style to your existing CSS */
+#searchResults.visible,
+#movieDetails.visible,
+#movieSuggestions.visible {
+  display: block;
+}
+
+#searchResults:not(.visible),
+#movieDetails:not(.visible),
+#home:not(.visible),
+#movieSuggestions:not(.visible) {
+  display: none;
+}
+
+#custom-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Responsive grid */
+  grid-gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.movie-details-container {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.cast-container {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.recommendation {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.plot-container {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+/*movie details*/
+.movie-details-container {
+  text-align: right;
+}
+
+.movie-details-container #details {
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Dark background color */
+  border-radius: 10px;
+  /* Border radius */
+  padding: 15px;
+  /* Optional padding for better appearance */
+}
+
+.movie-details-container img {
+  border: 4px solid #ffffff;
+}
+
+/*movie details*/
+
+/*cast*/
+.cast-container {
+  justify-content: center;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Dark background color */
+  border-radius: 10px;
+  /* Border radius */
+  padding: 15px;
+  /* Optional padding for better appearance */
+}
+
+.cast-item {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cast-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  padding-right: 10px;
+}
+
+.cast-name {
+  align-self: center;
+}
+
+/*cast*/
+
+/*recommendation*/
+.recommendation {
+  text-align: left;
+}
+
+.recommendation-item {
+  display: inline-block;
+  margin-left: 8%;
+}
+
+.recommendation-image {
+  width: 80px;
+  border: 2px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Add transition for smooth effect */
+}
+
+.recommendation-image:hover {
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  transform: scale(1.1);
+  /* Scale the image on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* Add a subtle box shadow on hover */
+}
+
+
+@media only screen and (max-width: 767px) {
+  .recommendation-item {
+    margin-left: 10px;
+    padding-right: 20px;   
+  }
+
+  .recommendation-image {
+    width: 50px;
+  }
+}
+
+/*recommendation*/
+
+/*plot-container*/
+.plot-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Dark background color */
+  border-radius: 10px;
+  /* Border radius */
+  padding: 15px;
+  /* Optional padding for better appearance */
+}
+
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Adjust as needed */
+}
+
+.screenshots img {
+  width: auto;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /* Add margin between screenshots for better spacing */
+  transition: transform 0.3s ease;
+  /* Add smooth transition effect */
+}
+
+.screenshots img:hover {
+  transform: scale(1.1);
+  /* Scale the image on hover */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+}
+
+.youtube-trailer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Adjust as needed */
+}
+
+/*plot-container*/
+
+/*button */
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg,
+          rgba(50, 205, 50, 1) 10.8%,
+          rgba(0, 128, 0, 1) 94.3%);
+
+  transition: all 0.475s;
+}
+
+/*button */
+
+.imdb-logo {
+  font-family: 'Amazon Ember', 'Rubik Doodle Shadow', sans-serif;
+  font-size: 1.2em;
+  /* Adjust the font size as needed */
+  font-weight: bold;
+  /* Make the font bold */
+  background: linear-gradient(to right, #ffcc00, #ffae00);
+  /* Gradient background from yellow to a slightly darker shade */
+  color: #000000;
+  /* Set the text color to white for better contrast */
+  text-shadow: none;
+  /* Remove the text shadow for light mode */
+  letter-spacing: 0.5px;
+  /* Adjust the letter spacing as needed */
+  display: inline-block;
+  padding: 2px 5px;
+  /* Adjust the padding for better visual appearance */
+  border-radius: 8px 8px 8px 8px;
+  /* Adjust the border-radius for a distinctive IMDb logo look */
+}
